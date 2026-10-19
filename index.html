@@ -476,6 +476,8 @@
         filtered = filtered.filter(item => item.date === selectedFilterDate);
       }
 
+      filtered.sort((a, b) => new Date(b.date) - new Date(a.date));
+
       if (filtered.length === 0) {
         container.innerHTML = `<p class="text-gray-400 text-sm text-center py-6">Belum ada jadwal pekanan tersimpan.</p>`;
         return;
